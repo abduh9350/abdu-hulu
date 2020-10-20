@@ -1,11 +1,18 @@
 .header {
-  color: red;
   display: flex;
-  background-color: gray;
   padding: 20px;
   align-items: center;
   justify-content: space-between;
-  overflow-x: auto;
+  overflow-x: scroll;
+}
+
+.header::-webkit-scrollbar {
+  display: none;
+}
+
+.header {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .header_icon > .MuiSvgIcon-root {
@@ -13,8 +20,12 @@
   margin-right: auto;
 }
 
+.header_icon--active > p {
+  display: inline-flex !important;
+}
+
 .header_icon:hover > p {
-  display: inline;
+  display: inline-flex;
 }
 .header_icon > p {
   display: none;

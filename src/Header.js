@@ -11,7 +11,7 @@ function Header() {
     return (
         <div className='header'>
             <div className="header_icons">
-                <div className="header_icon">
+                <div className="header_icon  header_icon--active">
                     <IconButton>
                         <HomeIcon />
                     </IconButton>
@@ -50,7 +50,7 @@ function Header() {
                 
             </div>
             <img 
-                src='https://p.kindpng.com/picc/s/151-1513464_hem-hem-hd-png-download.png' 
+                src='https://cdn.freebiesupply.com/images/large/2x/hulu-logo-white.png' 
                 alt='' 
             />
         </div>

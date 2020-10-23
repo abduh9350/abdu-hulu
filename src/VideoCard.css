@@ -12,8 +12,16 @@
 .videoCard > img {
   height: 300px;
   width: 500px;
-  object-fit: cover;
+  object-fit: contain;
   margin-left: 0;
+}
+
+.videoCard_stats {
+  display: none;
+}
+
+.videoCard:hover > .videoCard_stats {
+  display: inline;
 }
 
 .videoCard > h2 {

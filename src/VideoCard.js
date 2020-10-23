@@ -1,18 +1,31 @@
 import React from 'react'
 import './VideoCard.css';
-function VideoCard() {
+import TextTruncate from 'react-text-truncate';
+import { ThumbUpSharp } from '@material-ui/icons';
+import { forwardRef } from 'react';
+const base_url = 'https://image.tmdb.org/t/p/original/'
+const VideoCard = forwardRef(({ movie }, ref) => {
     return (
-        <div className='videoCard'>
-            <h1>VideoCard</h1>
+        <div ref={ref} className='videoCard'>
             <img 
-                src='https://upload.wikimedia.org/wikipedia/commons/e/ed/Elon_Musk_Royal_Society.jpg'
-                alt=''
+                src={`${base_url}${movie.backdrop_path || movie.poster_path}`}
+                alt='movie poster'
             />
-            <p>This is about Elon</p>
-            <h2>Movie title</h2>
-            <p>Number of likes...</p>
+            <TextTruncate 
+                line={1}
+                element='p'
+                truncateText='...'
+                text={movie.overview}
+            />
+            <h2>{movie.title || movie.original_name}</h2>
+            <p className='videoCard_stats'>
+                {movie.media_type && `${movie.media_type} .`}
+                {movie.release_date || movie.first_air_date} .
+                <ThumbUpSharp />{''}
+                {movie.vote_count}
+            </p>
         </div>
     )
-}
+})
 
 export default VideoCard
